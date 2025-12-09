@@ -49,7 +49,7 @@ const InfoCard = ({ Icon, title, text }: InfoCardProps) => (
     className="bg-white rounded-2xl p-6 border-l-4 border-[#005399] shadow-sm"
   >
     <div className="flex items-start gap-4">
-      <Icon className="h-8 w-8 text-[#005399] flex-shrink-0" />
+      <Icon className="h-8 w-8 text-[#005399] shrink-0" />
       <div>
         <h3 className="font-semibold text-lg text-[#0F172A] mb-1">{title}</h3>
         <p className="text-sm text-neutral-600 leading-relaxed">{text}</p>
@@ -58,7 +58,7 @@ const InfoCard = ({ Icon, title, text }: InfoCardProps) => (
   </motion.div>
 );
 
-export default function MembershipPage(): JSX.Element {
+export default function MembershipPage(){
   const [activeTab, setActiveTab] = useState<TabKey>("current-cohort");
   const [applicants, setApplicants] = useState(0);
   const [selected, setSelected] = useState(0);
@@ -200,7 +200,7 @@ export default function MembershipPage(): JSX.Element {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-[#005399] to-[#003E65] rounded-2xl p-6 text-white shadow-md flex flex-col gap-4 justify-between">
+                  <div className="bg-linear-to-br from-[#005399] to-[#003E65] rounded-2xl p-6 text-white shadow-md flex flex-col gap-4 justify-between">
                     <div>
                       <div className="text-3xl font-bold mb-1">{applicants}+</div>
                       <div className="text-sm text-white/90">Applicants</div>
@@ -218,11 +218,11 @@ export default function MembershipPage(): JSX.Element {
 
                     <div className="mt-4 text-sm text-white/90 border-t border-white/20 pt-3">
                       <div className="flex items-start gap-2">
-                        <CheckCircle className="h-5 w-5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 shrink-0" />
                         <span>Strong pipeline of Freshman & Sophomore members</span>
                       </div>
                       <div className="flex items-start gap-2 mt-2">
-                        <CheckCircle className="h-5 w-5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 shrink-0" />
                         <span>Representation across business & tech-related majors</span>
                       </div>
                     </div>
@@ -366,7 +366,7 @@ export default function MembershipPage(): JSX.Element {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-                    <div className="bg-gradient-to-r from-[#005399] to-[#0077A8] text-white px-5 py-4 flex items-center gap-3">
+                    <div className="bg-linear-to-r from-[#005399] to-[#0077A8] text-white px-5 py-4 flex items-center gap-3">
                       <div className="bg-white text-[#005399] rounded-full w-10 h-10 flex items-center justify-center font-bold">1</div>
                       <h4 className="text-lg font-bold">Four Short Essays</h4>
                     </div>
@@ -377,7 +377,7 @@ export default function MembershipPage(): JSX.Element {
                   </div>
 
                   <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-                    <div className="bg-gradient-to-r from-[#005399] to-[#0077A8] text-white px-5 py-4 flex items-center gap-3">
+                    <div className="bg-linear-to-r from-[#005399] to-[#0077A8] text-white px-5 py-4 flex items-center gap-3">
                       <div className="bg-white text-[#005399] rounded-full w-10 h-10 flex items-center justify-center font-bold">2</div>
                       <h4 className="text-lg font-bold">Behavioral Interview</h4>
                     </div>
@@ -388,7 +388,7 @@ export default function MembershipPage(): JSX.Element {
                   </div>
 
                   <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-                    <div className="bg-gradient-to-r from-[#005399] to-[#0077A8] text-white px-5 py-4 flex items-center gap-3">
+                    <div className="bg-linear-to-r from-[#005399] to-[#0077A8] text-white px-5 py-4 flex items-center gap-3">
                       <div className="bg-white text-[#005399] rounded-full w-10 h-10 flex items-center justify-center font-bold">3</div>
                       <h4 className="text-lg font-bold">Two Case Interviews</h4>
                     </div>
@@ -399,7 +399,7 @@ export default function MembershipPage(): JSX.Element {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-[#005399] to-[#003E65] rounded-2xl p-6 text-white shadow-md flex items-start gap-4">
+                <div className="bg-linear-to-br from-[#005399] to-[#003E65] rounded-2xl p-6 text-white shadow-md flex items-start gap-4">
                   <Award className="h-10 w-10" />
                   <div>
                     <h3 className="text-xl font-bold">Result</h3>
