@@ -27,15 +27,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#about"
+                  href="/how-to-apply"
                   className="text-sm text-neutral-300 hover:text-[#003E65] transition-colors"
                 >
-                  About Us
+                  How To Apply
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="text-sm text-neutral-300 hover:text-[#003E65] transition-colors"
                 >
                   Contact
