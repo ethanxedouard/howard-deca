@@ -7,12 +7,16 @@ import { ChevronDown } from "lucide-react";
 
 export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const toggleDropdown = (key: string) => {
     setOpenDropdown(openDropdown === key ? null : key);
   };
 
-  const closeDropdown = () => setOpenDropdown(null);
+  const closeAll = () => {
+    setOpenDropdown(null);
+    setMobileOpen(false);
+  };
 
   const menuItems = [
     {
@@ -29,9 +33,7 @@ export default function Header() {
     {
       label: "Media",
       key: "media",
-      links: [
-        { label: "Photo Gallery", href: "/media" },
-      ],
+      links: [{ label: "Photo Gallery", href: "/media" }],
     },
     { label: "Contact", href: "/contact" },
   ];
@@ -39,7 +41,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white">
       <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Left side - Logos */}
+
+        {/* LEFT SIDE – Logos */}
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center">
             <Image
@@ -51,7 +54,9 @@ export default function Header() {
               priority
             />
           </Link>
+
           <div className="h-10 w-px bg-zinc-300" />
+
           <Link href="/" className="flex items-center">
             <Image
               src="/images/howard-logo.png"
@@ -64,14 +69,14 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Right side - Navigation */}
-        <nav className="flex items-center gap-6">
+        {/* DESKTOP NAV */}
+        <nav className="hidden md:flex items-center gap-6">
           {menuItems.map((item) =>
             item.links ? (
               <div key={item.key} className="relative">
                 <button
                   onClick={() => toggleDropdown(item.key)}
-                  className="flex items-center gap-1 text-sm font-medium text-[#1A1A1A] hover:text-[#005399] transition-colors"
+                  className="flex items-center gap-1 text-sm font-medium text-[#1A1A1A] hover:text-[#005399]"
                 >
                   {item.label}
                   <ChevronDown
@@ -81,14 +86,13 @@ export default function Header() {
                   />
                 </button>
 
-                {/* Dropdown */}
                 {openDropdown === item.key && (
                   <div className="absolute left-0 top-full mt-2 w-48 rounded-lg border border-zinc-200 bg-white py-2 shadow-lg">
                     {item.links.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
-                        onClick={closeDropdown}
+                        onClick={closeAll}
                         className="block px-4 py-2 text-sm font-medium text-[#1A1A1A] hover:bg-zinc-50 hover:text-[#005399]"
                       >
                         {link.label}
@@ -101,15 +105,89 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="relative text-sm font-medium text-[#1A1A1A] hover:text-[#005399]"
+                className="text-sm font-medium text-[#1A1A1A] hover:text-[#005399]"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#005399] transition-all duration-300 group-hover:w-full" />
               </Link>
             )
           )}
         </nav>
+
+        {/* MOBILE HAMBURGER */}
+        <button
+          className="md:hidden focus:outline-none"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          <svg
+            className="h-7 w-7 text-black"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            {mobileOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
       </div>
+
+      {/* MOBILE MENU */}
+      {mobileOpen && (
+        <div className="md:hidden border-t border-zinc-200 bg-white px-6 py-4">
+          {menuItems.map((item) =>
+            item.links ? (
+              <div key={item.key} className="mb-4">
+                <button
+                  className="flex w-full items-center justify-between text-left text-base font-medium text-[#1A1A1A]"
+                  onClick={() => toggleDropdown(item.key)}
+                >
+                  {item.label}
+                  <ChevronDown
+                    className={`h-5 w-5 transition-transform ${
+                      openDropdown === item.key ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {openDropdown === item.key && (
+                  <div className="mt-2 ml-4 space-y-2">
+                    {item.links.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={closeAll}
+                        className="block text-sm text-[#1A1A1A] hover:text-[#005399]"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={closeAll}
+                className="block py-2 text-base font-medium text-[#1A1A1A] hover:text-[#005399]"
+              >
+                {item.label}
+              </Link>
+            )
+          )}
+        </div>
+      )}
     </header>
   );
 }
