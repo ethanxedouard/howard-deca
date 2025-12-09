@@ -6,7 +6,7 @@ import { CheckCircle, DollarSign } from "lucide-react";
 
 type TabKey = "benefits" | "tiers" | "ways-to-give";
 
-export default function SponsorshipPage(): JSX.Element {
+export default function SponsorshipPage() {
   const [activeTab, setActiveTab] = useState<TabKey>("benefits");
 
   const tabBtnBase =
