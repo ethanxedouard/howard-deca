@@ -7,7 +7,7 @@ export default function MediaPage() {
   const tabs = [
     {
       title: "Trainings",
-      images: [], 
+      images: [],
     },
     {
       title: "Events",
@@ -36,6 +36,8 @@ export default function MediaPage() {
 
   const [activeTab, setActiveTab] = useState(tabs[0].title);
   const currentTab = tabs.find((t) => t.title === activeTab);
+
+  const hasImages = currentTab?.images && currentTab.images.length > 0;
 
   return (
     <div className="w-full bg-neutral-50 min-h-screen py-16">
@@ -75,22 +77,20 @@ export default function MediaPage() {
           })}
         </div>
 
-        {/* EMPTY STATE MESSAGE */}
-        {currentTab?.images.length === 0 && (
+        {/* EMPTY STATE */}
+        {!hasImages && (
           <div className="text-center py-20 bg-white rounded-2xl shadow-sm">
             <p className="text-xl text-neutral-500 font-medium">
               No images available for <span className="font-semibold">{activeTab}</span> yet.
             </p>
-            <p className="text-neutral-400 mt-2">
-              Check back soon for updates!
-            </p>
+            <p className="text-neutral-400 mt-2">Check back soon for updates!</p>
           </div>
         )}
 
         {/* IMAGE GRID */}
-        {currentTab?.images.length > 0 && (
+        {hasImages && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 animate-fadeIn">
-            {currentTab.images.map((src, i) => (
+            {currentTab!.images.map((src, i) => (
               <div
                 key={i}
                 className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
@@ -108,7 +108,6 @@ export default function MediaPage() {
         )}
       </div>
 
-      {/* FADE-IN ANIMATION */}
       <style jsx>{`
         .animate-fadeIn {
           animation: fadeIn 0.4s ease-in-out;
