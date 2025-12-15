@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Howard University Collegiate DECA Website
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This repository contains the source code for the **official website of the Howard University Collegiate DECA Chapter**. The site was designed and developed to provide a clear, modern, and accessible platform for showcasing the chapter’s mission, events, and resources for current and prospective members.
+
+The goal of this project was to build a production-ready website for a real student organization, focusing on usability, responsiveness, and maintainability.
+
+---
+
+## Live Site
+
+🔗 **Website:** [https://hudeca.vercel.app/]
+
+---
+
+## Features
+
+* Responsive design optimized for desktop and mobile
+* Clear information architecture for easy navigation
+* Pages highlighting DECA’s mission, events, and involvement opportunities
+* Scalable structure to allow future updates and content expansion
+
+---
+
+## Tech Stack
+
+*(Update if needed)*
+
+* **Frontend:** React / Next.js
+* **Styling:** CSS / Tailwind CSS
+* **Deployment:** Vercel
+
+---
+
+## Project Scope & Responsibilities
+
+This project was completed as a solo build.
+
+My responsibilities included:
+
+* Designing the site layout and user flow
+* Implementing responsive UI components
+* Developing all frontend functionality
+* Deploying and maintaining the live site
+
+---
+
+## Getting Started (Local Development)
+
+### Prerequisites
+
+* Node.js (v18 or later recommended)
+* npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/your-repo-name.git
+
+# Navigate to the project directory
+cd your-repo-name
+
+# Install dependencies
+npm install
+```
+
+### Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The site is deployed using **Vercel**. Updates pushed to the main branch are automatically deployed.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Future Improvements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* CMS integration for easier content updates
+* Event management or calendar functionality
+* Accessibility enhancements
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Acknowledgments
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Special thanks to the **Howard University Collegiate DECA Chapter** for the opportunity to build and deploy this site.
+
+---
+
+## Author
+
+**Ethan Edouard**
+Software Engineering Student
+LinkedIn: [www.linkedin.com/in/ethanedouard]
+GitHub: [(https://github.com/ethanxedouard)]
