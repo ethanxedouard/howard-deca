@@ -25,7 +25,6 @@ The goal of this project was to build a production-ready website for a real stud
 
 ## Tech Stack
 
-*(Update if needed)*
 
 * **Frontend:** React / Next.js
 * **Styling:** CSS / Tailwind CSS
