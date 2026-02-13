@@ -50,7 +50,7 @@ export default function HeroSection() {
           {/* RIGHT SIDE — Hidden on small screens + padding added */}
           <div className="hidden lg:flex justify-end pr-8 xl:pr-12">
             <Image
-              src="/images/deca-logo.png"
+              src="/images/deca-logo-no-text.png"
               alt="DECA Logo"
               width={500}
               height={500}
